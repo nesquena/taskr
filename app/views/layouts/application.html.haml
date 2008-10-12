@@ -1,0 +1,16 @@
+!!! Strict
+%html{html_attrs}
+  %head
+    = render :partial => "shared/head"
+    = yield :head
+  %body
+    #container
+      #branding   
+        = render :partial => "shared/banner"
+      #navigation 
+        = render :partial => "shared/navigation"
+      #content    
+        #notice.flash= flash[:notice]
+        = yield :layout
+      #footer     
+        = render :partial => "shared/footer"

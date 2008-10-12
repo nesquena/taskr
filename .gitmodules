@@ -1,0 +1,6 @@
+[submodule "javascript_auto_include"]
+	path = javascript_auto_include
+	url = git://github.com/kernow/javascript_auto_include.git
+[submodule "vendor/plugins/javascript_auto_include"]
+	path = vendor/plugins/javascript_auto_include
+	url = git://github.com/kernow/javascript_auto_include.git

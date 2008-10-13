@@ -5,3 +5,7 @@ This is a sample application that shows how to create a simple, unobstrusive to-
 I have recently been working to eliminate what I consider to be bad practices within rails for rich internet applications such as rjs templates, ajax helpers, link_to_remote, et. al
  
 Most of the problems boil down to the default rails way not being a best practice anymore. Instead of obstrusive, ugly inline javascript I have opted to start learning various methods of unobtrusive javascript. This project is about trying jquery + lowpro for unobtrusive javascript.
+
+Another element of this application to note is that I wanted to experiment with the new library Thor and it always bothered me that rails had both rake tasks and then ALSO script/xxxx tasks. Clearly the correct command line interface would allow these to be consistent. Also there are a lot of rake tasks that could be condensed into a single task if rake supported command arguments.
+
+For these reasons, I have played around with creating a wrapper for rake and script by collecting all the most common ones into a single thor file 'rails.thor' which can be used to perform any of those tasks using the cleaner thor syntax. I would hope eventually that rails would remove rake and script and migrate everything to a thor task or equivalent.

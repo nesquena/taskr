@@ -20,3 +20,8 @@ config.action_controller.allow_forgery_protection    = false
 # The :test delivery method accumulates sent emails in the
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
+
+# Gems
+config.gem 'mocha'
+config.gem 'quietbacktrace' # http://thoughtbot.com/projects/quietbacktrace
+config.gem 'thoughtbot-shoulda', :lib => 'shoulda/rails', :source => 'http://gems.github.com'

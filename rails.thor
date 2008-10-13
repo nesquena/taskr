@@ -19,15 +19,19 @@ class RailsThor < Thor
 end
 
 class Rails < RailsThor
-  
-  
-  desc "console", "starts a rails console"
+  desc "console", "Starts a rails console"
   method_options 'e' => :optional
   def console
     environment = options['e'] || 'development'
     script("console #{environment}")
   end
 
+  desc 'routes', "Print out all defined routes in match order, with names."
+  def routes
+    puts "Loading rails routes list..."
+    rake(:routes)
+  end
+  
   class Db < RailsThor
 
     desc "create", "Create the database defined in config/database.yml"
@@ -59,11 +63,38 @@ class Rails < RailsThor
 
     class Test < RailsThor
 
-      desc "prepare", "prepares the test database"
+      desc "prepare", "Prepares the test database"
       def prepare
         rake('db:test:prepare')
+        rake('db:test:load')
         puts "Prepared the test database"
       end
+      
+      desc "clone", "Recreate the test database from the database schema"
+      method_options '--structure' => :boolean
+      def clone
+        options[:structure] ? rake('db:test:clone:structure') : rake('db:test:clone')
+      end
+    end
+  end
+  
+  class Schema < RailsThor
+    desc "dump", "Create a db/schema.rb file that can be portably used"
+    def dump
+      rake('db:schema:dump')
+    end
+    
+    desc "load", "Load a schema.rb file into the database"
+    def load
+      rake('db:schema:load')
+    end
+  end
+  
+  class Log < RailsThor
+    desc "clear", "Truncates all *.log files in log/ to zero bytes"
+    def clear
+      rake('log:clear')
+      puts "Successfully cleared all log files"
     end
   end
 

@@ -24,7 +24,7 @@ NewTaskForm = $.klass(Remote.Form, {
 	},
 	_afterSuccess : function(taskItem) {
 		this.elements.taskList.append(taskItem);
-		$(this.element).clearForm();
+		this.element.clearForm();
     this._updateFlash();
 	},
 	_updateFlash : function(message) {
@@ -38,7 +38,7 @@ NewTaskForm = $.klass(Remote.Form, {
 	},
 	_setupElements : function() {
 		this.elements = {
-			taskList : $('ul#tasks'),
+			taskList  : $('ul#tasks'),
 			taskFlash : $('#task-flash'),
 			taskInput : $('form.new-task input[type=text]')
 		};

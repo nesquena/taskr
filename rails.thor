@@ -19,12 +19,34 @@ class RailsThor < Thor
 end
 
 class Rails < RailsThor
+  # ========================
+  # SCRIPT
+  # ========================
+  
   desc "console", "Starts a rails console"
-  method_options 'e' => :optional
+  method_options 'e' => :optional, '--database' => :boolean
   def console
     environment = options['e'] || 'development'
-    script("console #{environment}")
+    options['database'] ? script("dbconsole #{environment}") : script("console #{environment}")
   end
+  
+  desc "about", "Displays information about this application"
+  def about
+    script("about")
+  end
+  
+  desc 'generate', 'Generates an item for the rails application'
+  def generate(category, name, schema=nil)
+    script("generate #{category} #{name} #{schema}")
+  end
+  
+  def destroy(category, name)
+    script("destroy #{category} #{name}")
+  end
+  
+  # ========================
+  # RAKE
+  # ========================
 
   desc 'routes', "Print out all defined routes in match order, with names."
   def routes

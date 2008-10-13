@@ -1,10 +1,10 @@
 = Taskr =
 
-This is really just an experiment relating to testing four particular tools:
-
-  * jquery  (javascript framework)
-  * lowpro  (behavioral framework for jquery)
-  * haml    (view templating language)
-  * tripoli (reset presentation styles)
-  
 This is a sample application that shows how to create a simple, unobstrusive to-do list which allows you to add and remove tasks.
+
+I have recently been working to eliminate what I consider to be bad practices within rails for rich internet applications such as
+rjs templates, ajax helpers, link_to_remote, et. al
+ 
+Most of the problems boil down to the default rails way not being a best practice anymore. Instead of obstrusive, ugly inline javascript
+I have opted to start learning various methods of unobtrusive javascript. This project is about trying jquery + lowpro for 
+unobtrusive javascript.

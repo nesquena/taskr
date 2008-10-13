@@ -1,0 +1,49 @@
+/*-----------------------------
+ CONTAINER
+------------------------------*/
+
+div#container {
+	width: 80%;
+	margin: 2em auto;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/*-----------------------------
+ BRANDING
+------------------------------*/
+
+div#branding h1 {
+	font-size: 4em;
+}
+
+/*-----------------------------
+ NAVIGATION
+------------------------------*/
+
+div#navigation ul {
+	margin-top: 2em;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+div#navigation ul li {
+	display: inline;
+	font-size: 1.5em;
+}
+
+/*-----------------------------
+ CONTENT
+------------------------------*/
+
+input.invalid, textarea.invalid {
+	border: 2px solid red;
+}
+
+/*-----------------------------
+ FOOTER
+------------------------------*/
+
+div#footer {
+	margin-top: 2em;
+}
+

@@ -1,0 +1,2 @@
+jquery_stack = ["jquery/core", "jquery/jquery.bind", "jquery/jquery.livequery", "jquery/jquery.form", "jquery/jquery.lowpro", "jquery/jquery.domec" ]
+ActionView::Helpers::AssetTagHelper.register_javascript_expansion :jquery => jquery_stack

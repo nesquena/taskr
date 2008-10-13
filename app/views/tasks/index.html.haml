@@ -1,5 +1,11 @@
-%h1 Task List
+- page_title "Task Notes Index"
 
-%p Below is a to-do list. Right now you can add items which should be ajax and remove items which should ajax...
+%h2 Task List
 
-%p Input Textbox -- Submit Button
+%p Below is a to-do list; Feel free to browse the items below...
+
+%ul#tasks= render :partial => 'task_item', :collection => @tasks
+
+%p ...or add a new item below:
+
+= render :partial => 'task_form'

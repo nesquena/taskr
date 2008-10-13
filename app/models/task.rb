@@ -10,5 +10,7 @@
 #
 
 class Task < ActiveRecord::Base
+  validates_length_of :description, :within => 3..20, :message => "must be specified"
+  
   
 end
